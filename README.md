@@ -26,8 +26,21 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * In a separate tab, log into Microsoft Fabric (www.app.powerbi.com).
 * On the menu bar located on the left of the screen, click on "Create" --> "See All" (under "Other Items You Can Create with Fabric") --> Scroll down to the Real-Time Analytics tab and select KQL Database.
 * Name the KQL Database as "ISSTrackerDB" and click on "Create".
-* This KQL Database will be used to store the real-time data of both the location of the ISS, as well as the astronauts aboard.
+* This KQL Database will later be used to store the real-time data of both the location of the ISS, as well as the astronauts aboard.
 
 ### 3. Create an Eventstream (in Fabric):
+* Go back to the home of Fabric to create an Eventstream.
+* Name it "LocationES" and click on "Create".
+* ...
+* In the source box, select custom app and insert the name of the first Logic App ("LocationTrackerLA").
+* Open the Notepad application on your computer and copy the "Connection String Primary Key" into it. Make sure to unhide the key first in order to copy it.
+* In the Notepad application, split this key in 2 parts at the semi-colon before EntityPath. Make sure to remove the semi-colon.
+* The first part of the connection string is the "Service Bus Connection String" and the second part is the EventHub name, both of which we will require in the next steps.
+* Return to the Fabric window and repeat all the steps from this section to create another Eventstream called "AstronautES". Make sure to also copy its Connection String separately in the Notepad.
+
+### 4. Create Workflows (in Logic Apps in Azure):
+* Head over to the Logic App called "LocationTrackerLA" in the Azure portal. Under the workflows tab, click on "Create".
+* Name the workflow "LocationWF" and make sure to select "STATEFUL".
+* 
 
 ## Part Two: Visualization in PowerBI
