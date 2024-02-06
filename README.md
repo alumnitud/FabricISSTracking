@@ -11,3 +11,12 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 2. Event Stream:
 3. KQL Database:
 4. PowerBI: to visualize the incoming data
+
+## Part One: Collecting the Data 
+# 1. Create a Logic App (in Azure):
+
+# 2. Create a KQL Database (in Fabric):
+
+# 3. Create an Eventstream (in Fabric):
+
+## Part Two: Visualization in PowerBI
