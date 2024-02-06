@@ -14,6 +14,8 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 ## Part One: Collecting the Data 
 ### 1. Create a Logic App (in Azure):
+..*Log into the Azure Portal
+..* 
 
 ### 2. Create a KQL Database (in Fabric):
 
