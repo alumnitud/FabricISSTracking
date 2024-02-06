@@ -41,6 +41,10 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 ### 4. Create Workflows (in Logic Apps in Azure):
 * Head over to the Logic App called "LocationTrackerLA" in the Azure portal. Under the workflows tab, click on "Create".
 * Name the workflow "LocationWF" and make sure to select "STATEFUL".
+* In the "code" tab on the left side, copy and paste the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
+* Head over to the "Code Designer" tab. You may now see a warning. To resolve the warning complete the steps below:
 * 
+* ...
+* Repeat the procedure from this section to create another workflow called "AstronautsWF".
 
 ## Part Two: Visualization in PowerBI
