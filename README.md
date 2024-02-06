@@ -14,8 +14,13 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 ## Part One: Collecting the Data 
 ### 1. Create a Logic App (in Azure):
-..*Log into the Azure Portal
-..* 
+* Log into the Azure Portal
+* In the search bar, search for Logic App. On the Logic App menu click on "Create".
+* In the setup box for the Logic App, create a new resource group and name it "ISSTrackingSystem"
+* Choose a name for the Logic App, e.g. "LocationTrackerLA" (The suffix "LA" stands for Logic App).
+* In the "monitoring" tab, turn off the monitoring (not necessary for this project as it is not in production).
+* Keep all the other default settings as they are. Click on Review + Create --> Create. This process may take a few minutes.
+* Repeat all these steps to create another logic app in the same resource group (ISSTrackingSystem), with the name "AstronautTrackerLA".  
 
 ### 2. Create a KQL Database (in Fabric):
 
