@@ -49,6 +49,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 * Name the workflow "LocationWF" and make sure to select "STATEFUL". Click on "Create".
 * Once created, head inside the workflow. In the "Code" tab on the left side, replace the deafult code with the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
+
+![alt text](img/WF2.jpg)
+
 * Head over to the "Designer" tab. You may now see a warning e.g. "Workflow Validation Failed!". To resolve the warning complete the steps below:
   1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
   2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
@@ -56,6 +59,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
   4) Event Hub Name: *Insert Event Hub Name*, Advanced Param: Content, Content: HTTP Body.
   5) Save this and head back to overview. Run it and now the runs should succeed.
 * Repeat the procedure from this section to create another workflow called "AstronautsWF".
+
+![alt text](img/WF3.jpg)
+![alt text](img/WF4.jpg)
 
 ### 5. Data Destination (in Fabric):
 * Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Name: LocationDest.
