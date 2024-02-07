@@ -64,7 +64,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 ![alt text](img/WF4.jpg)
 
 ### 5. Data Destination (in Fabric):
-* Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Select Durect Ingestion Mode. Destination Name: LocationDest. Select workplace where you had created the KQL Database. Then, select the KQL Database.
+* Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Select Direct Ingestion Mode. Destination Name: LocationDest. Select workplace where you had created the KQL Database. Then, select the KQL Database.
 
 ![alt text](img/Dest1.jpg)
 
