@@ -7,9 +7,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 [Tales from the Field's Youtube Tutorial]: https://www.youtube.com/watch?v=-HhU7yLyuUU
 
 ## Services Used:
-1. Logic Apps:
-2. Event Stream:
-3. KQL Database:
+1. Logic Apps: gets data from the API and sends it to Event Stream.
+2. Event Stream: 
+3. KQL Database: to store the incoming data
 4. PowerBI: to visualize the incoming data
 
 ## Part One: Collecting the Data 
@@ -43,8 +43,15 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Name the workflow "LocationWF" and make sure to select "STATEFUL".
 * In the "code" tab on the left side, copy and paste the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
 * Head over to the "Code Designer" tab. You may now see a warning. To resolve the warning complete the steps below:
-* 
-* ...
+1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
+2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
+3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New
+4) Event Hub Name: *Insert Event Hub Name*, Advanced Param: Content, Content: HTTP Body.
+5) Save this and head back to overview. Run it and now the runs should succeed.
 * Repeat the procedure from this section to create another workflow called "AstronautsWF".
+
+### 5. Data Destination (in Fabric):
+* Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Name: LocationDest.
+* In the menu box which appears, select "Create New Table" and name it LocationData. In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns.  
 
 ## Part Two: Visualization in PowerBI
