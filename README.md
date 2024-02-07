@@ -21,7 +21,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * In the "monitoring" tab, turn off the monitoring (not necessary for this project as it is not in production).
 * Keep all the other default settings as they are. Click on Review + Create --> Create. This process may take a few minutes.
 * Repeat all these steps to create another logic app in the same resource group (ISSTrackingSystem), with the name "AstronautTrackerLA".
-![alt text](img/CreatingLA)
+![alt text](img/CreatingLA.jpg)
 
 ### 2. Create a KQL Database (in Fabric):
 * In a separate tab, log into Microsoft Fabric (www.app.powerbi.com).
