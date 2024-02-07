@@ -47,9 +47,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 ![alt text](img/WF1.jpg)
 
-* Name the workflow "LocationWF" and make sure to select "STATEFUL".
-* In the "code" tab on the left side, copy and paste the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
-* Head over to the "Code Designer" tab. You may now see a warning. To resolve the warning complete the steps below:
+* Name the workflow "LocationWF" and make sure to select "STATEFUL". Click on "Create".
+* Once created, head inside the workflow. In the "Code" tab on the left side, copy and paste the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
+* Head over to the "Designer" tab. You may now see a warning. To resolve the warning complete the steps below:
   1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
   2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
   3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New
