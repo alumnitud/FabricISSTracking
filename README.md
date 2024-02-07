@@ -34,6 +34,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Go back to the home of Fabric to create an Eventstream.
 * Name it "LocationES" and click on "Create".
 * In the source box, select custom app and insert the name of the first Logic App ("LocationTrackerLA").
+![alt text](img/ES1.jpg)
 * Open the Notepad application on your computer and copy the "Connection String Primary Key" into it. Make sure to unhide the key first in order to copy it.
 * In the Notepad application, split this key in 2 parts at the semi-colon before EntityPath. Make sure to remove the semi-colon.
 * The first part of the connection string is the "Service Bus Connection String" and the second part is the EventHub name, both of which we will require in the next steps.
