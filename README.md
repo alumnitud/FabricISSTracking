@@ -43,15 +43,17 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Name the workflow "LocationWF" and make sure to select "STATEFUL".
 * In the "code" tab on the left side, copy and paste the code present in this Github repository's file under the folder "LogicApps" --> get-iss-location.json. Click on "Save".
 * Head over to the "Code Designer" tab. You may now see a warning. To resolve the warning complete the steps below:
-1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
-2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
-3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New
-4) Event Hub Name: *Insert Event Hub Name*, Advanced Param: Content, Content: HTTP Body.
-5) Save this and head back to overview. Run it and now the runs should succeed.
+...1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
+...2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
+...3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New
+...4) Event Hub Name: *Insert Event Hub Name*, Advanced Param: Content, Content: HTTP Body.
+...5) Save this and head back to overview. Run it and now the runs should succeed.
 * Repeat the procedure from this section to create another workflow called "AstronautsWF".
 
 ### 5. Data Destination (in Fabric):
 * Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Name: LocationDest.
-* In the menu box which appears, select "Create New Table" and name it LocationData. In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns.  
+* In the menu box which appears, select "Create New Table" and name it "LocationData".
+* In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns. For the timestamp column, change the data type to string and then set the Mapping Transformation to "DateTimeFromUnixSeconds".
+* For the second Eventstream (AstronautES), change the destination to KQL Database (Name: AstronautDest). Create a new table called "AstronautData". In src --> more parameters --> system properties: x-optenquedtime. Change data format to JSON. 
 
 ## Part Two: Visualization in PowerBI
