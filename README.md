@@ -20,7 +20,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Choose a name for the Logic App, e.g. "LocationTrackerLA" (The suffix "LA" stands for Logic App).
 * In the "monitoring" tab, turn off the monitoring (not necessary for this project as it is not in production).
 * Keep all the other default settings as they are. Click on Review + Create --> Create. This process may take a few minutes.
-* Repeat all these steps to create another logic app in the same resource group (ISSTrackingSystem), with the name "AstronautTrackerLA".  
+* Repeat all these steps to create another logic app in the same resource group (ISSTrackingSystem), with the name "AstronautTrackerLA".
+![alt text][CreateLA]
+[CreateLA]: https://github.com/alumnitud/FabricISSTracking/blob/main/img/CreatingLA.jpg "Creating a Logic App" 
 
 ### 2. Create a KQL Database (in Fabric):
 * In a separate tab, log into Microsoft Fabric (www.app.powerbi.com).
