@@ -70,6 +70,8 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 * In the menu box which appears, select "Create New Table" and name it "LocationData".
 * In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns. For the timestamp column, change the data type to string and then set the Mapping Transformation to "DateTimeFromUnixSeconds".
-* For the second Eventstream (AstronautES), change the destination to KQL Database (Name: AstronautDest). Create a new table called "AstronautData". In the "Configure the Data source" menu, under Advanced Filters --> Event system properties: x-opt-enqueued-time. Change data format to JSON. 
+* For the second Eventstream (AstronautES), change the destination to KQL Database (Name: AstronautDest). Create a new table called "AstronautData". In the "Configure the Data source" menu, under Advanced Filters --> Event system properties: x-opt-enqueued-time. Change data format to JSON.
+
+![alt text](img/Dest2.jpg)
 
 ## Part Two: Visualization in PowerBI
