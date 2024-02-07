@@ -64,7 +64,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 ![alt text](img/WF4.jpg)
 
 ### 5. Data Destination (in Fabric):
-* Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Name: LocationDest.
+* Head back to Fabric and select the first eventstream (LocationES). Change the destination to KQL Database. Select Durect Ingestion Mode. Destination Name: LocationDest. Select workplace where you had created the KQL Database. Then, select the KQL Database.
 * In the menu box which appears, select "Create New Table" and name it "LocationData".
 * In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns. For the timestamp column, change the data type to string and then set the Mapping Transformation to "DateTimeFromUnixSeconds".
 * For the second Eventstream (AstronautES), change the destination to KQL Database (Name: AstronautDest). Create a new table called "AstronautData". In src --> more parameters --> system properties: x-optenquedtime. Change data format to JSON. 
