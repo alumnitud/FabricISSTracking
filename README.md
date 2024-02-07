@@ -28,6 +28,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * On the menu bar located on the left of the screen, click on "Create" --> "See All" (under "Other Items You Can Create with Fabric") --> Scroll down to the Real-Time Analytics tab and select KQL Database.
 * Name the KQL Database as "ISSTrackerDB" and click on "Create".
 * This KQL Database will later be used to store the real-time data of both the location of the ISS, as well as the astronauts aboard.
+![alt text](img/KQL1.jpg)
 
 ### 3. Create an Eventstream (in Fabric):
 * Go back to the home of Fabric to create an Eventstream.
