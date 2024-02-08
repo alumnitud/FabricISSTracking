@@ -82,7 +82,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 ### 1) KQL Query (in Fabric):
 * In Fabric create a KQL Query.
-* Copy the code from the Github folder "KQL Query" into the canvas.
+* Copy the code from the Github file "ISS.kql" into the canvas.
 * The code contains 3 queries. To run each of the three queries separately, highlight the code you want to run and press on "run".
 ...*  Query 1: Shows the position of the ISS on the map along with the timestamps.
 ...*  Query 2: Shows a list of astronauts on the ISS.
