@@ -1,36 +1,26 @@
-//***********************************************************************************************************
-//http://open-notify.org/Open-Notify-API/
-//***********************************************************************************************************
-
-ISS_Loc
-| summarize max(Timestamp), min(Timestamp)
-
-
-//total records
-ISS_Loc
-| count 
-
-// ISS latest tragectory
-ISS_Loc
-| top 20 by Timestamp
-| project Longitude, Latitude, Timestamp
+// Query 1
+LocationData
+|project iss_position_longitude, iss_position_latitude, timestamp
 | render scatterchart with ( kind=map )
 
 
-
-// ISS complete orbit
-ISS_Loc
-| where Timestamp > ago(90m)
-| project Longitude, Latitude, Timestamp
-| render scatterchart with ( kind=map )
-
-
-
-// which humans are in space right now?
-Astronauts
+// Query 2: which humans are in space right now?
+AstronautsData
 | top 1 by ['x-opt-enqueued-time']
 | mv-expand people
 | project Name= people.name, Craft=people.craft
+
+
+// Query 3: ISS complete orbit
+LocationData
+| extend Timestamp =todatetime(timestamp)
+| where Timestamp > ago(90m)
+| project iss_position_longitude, iss_position_latitude, Timestamp
+
+
+
+
+
 
 
 
