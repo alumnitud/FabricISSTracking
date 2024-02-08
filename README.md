@@ -25,7 +25,7 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 ![alt text](img/CreatingLA.jpg)
 
 ### 2. Create a KQL Database (in Fabric):
-* In a separate tab, log into Microsoft Fabric (www.app.powerbi.com).
+* In a separate tab, log into Microsoft Fabric (www.powerbi.com).
 * On the menu bar located on the left of the screen, click on "Create" --> "See All" (under "Other Items You Can Create with Fabric") --> Scroll down to the Real-Time Analytics tab and select KQL Database.
 * Name the KQL Database as "ISSTrackerDB" and click on "Create".
 * This KQL Database will later be used to store the real-time data of both the location of the ISS, as well as the astronauts aboard.
