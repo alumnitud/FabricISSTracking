@@ -69,12 +69,34 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 ![alt text](img/Dest1.jpg)
 
 * In the menu box which appears, select "Create New Table" and name it "LocationData".
-* In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2. Also change the data type to "real" for the latitude and longitude columns. For the timestamp column, change the data type to string and then set the Mapping Transformation to "DateTimeFromUnixSeconds".
+* In the next tab change the data format to "JSON" and in advanced properties change nested levels to 2 (to separate the longitude and latitude). Also change the data type to "real" for the latitude and longitude columns. For the timestamp column, change the data type to string and then set the Mapping Transformation to "DateTimeFromUnixSeconds".
 
 ![alt text](img/Dest3.jpg)
 
-* For the second Eventstream (AstronautES), change the destination to KQL Database (Name: AstronautDest). Create a new table called "AstronautData". In the "Configure the Data source" menu, under Advanced Filters --> Event system properties: x-opt-enqueued-time. Change data format to JSON.
+* For the second Eventstream (AstronautES), again change the destination to KQL Database (Destination Name: AstronautDest) and seelct the same KQL DB as in ther previous step. Create a new table called "AstronautData". In the "Configure the Data source" menu, under Advanced Filters --> Event system properties: select "x-opt-enqueued-time". Change data format to JSON.
 
 ![alt text](img/Dest2.jpg)
 
 ## Part Two: Visualization in PowerBI
+
+### 1) KQL Query (in Fabric):
+* In Fabric create a KQL Query.
+* Copy the code from the Github folder "KQL Query" into the canvas.
+* The code contains 3 queries. To run each of the three queries separately, highlight the code you want to run and press on "run".
+...*  Query 1: Shows the position of the ISS on the map along with the timestamps.
+...*  Query 2: Shows a list of astronauts on the ISS.
+...*  Query 3: Shows the location data.
+
+### 2) PowerBI Report (in PBI Desktop):
+* Download the PowerBI report from the Github folder "PBI" and open the file in PBI Desktop.
+* You will notice the map at the center of the canvas will not load.
+* Go to Transform data. Also here you will see an error message like "Expression.Error: Access to the resource is forbidden." This is because this is not our KQL cluster. In order to change to our KQL cluster, head over to the KQL database we created in Fabric. Copy the Query URI in a Notepad as we will need it in PBI Desktop to query our Kusto cluster.
+* Go back to PBI Data Explorer and in the applied steps on the right, click on the settings button for source. In "Cluster" enter the Query URI. For "Database", write the nae of the KQL Database. In the Query box, add the first query from the KQL Query from the previous step and click "OK".
+* Change the column name of the longitude and latitude column to "longitude" and "latitude" respectively for easier visualization.
+* Repeat the same steps also for the "get-Astronauts" query (but insert 2nd KQL Query here) and for "ISSOrbit" (insert 3rd KQL Query here). In ISS Orbit, change the name of the longitude and latitude column to "longitude" and "latitude".
+* Change the parameter in "kql_db_url" to your own query URI. "kusto_db_name" can stay the same.
+* Click on "Close and Apply".
+* In a few minutes, the visualization should load and you should be able to see the location of the ISS (updates every 5 min).
+
+Congratulations, you have reached the end of the project!
+
