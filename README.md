@@ -1,4 +1,4 @@
-# FabricISSTracking
+# ISS Tracker in Fabric
 This is a step-by-step guide to create a near-real time system to track the current location as well as the astronauts aboard the International Space Station in Fabric. 
 
 Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's Youtube Tutorial].
