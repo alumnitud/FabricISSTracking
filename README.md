@@ -8,9 +8,10 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 
 ## Services Used:
 1. Logic Apps: gets data from the API and sends it to Event Stream.
-2. Event Stream: 
+2. Event Stream: captures and routes the data to KQL database.
 3. KQL Database: to store the incoming data
-4. PowerBI: to visualize the incoming data
+4. KQL Query: to query the data in the KQL Database
+5. PowerBI: to visualize the incoming data
 
 ## Part One: Collecting the Data 
 ### 1. Create a Logic App (in Azure):
@@ -91,6 +92,9 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Download the PowerBI report from the Github folder "PBI" and open the file in PBI Desktop.
 * You will notice the map at the center of the canvas will not load.
 * Go to Transform data. Also here you will see an error message like "Expression.Error: Access to the resource is forbidden." This is because this is not our KQL cluster. In order to change to our KQL cluster, head over to the KQL database we created in Fabric. Copy the Query URI in a Notepad as we will need it in PBI Desktop to query our Kusto cluster.
+
+![alt text](img/Visual1.jpg)
+  
 * Go back to PBI Data Explorer and in the applied steps on the right, click on the settings button for source. In "Cluster" enter the Query URI. For "Database", write the nae of the KQL Database. In the Query box, add the first query from the KQL Query from the previous step and click "OK".
 * Change the column name of the longitude and latitude column to "longitude" and "latitude" respectively for easier visualization.
 * Repeat the same steps also for the "get-Astronauts" query (but insert 2nd KQL Query here) and for "ISSOrbit" (insert 3rd KQL Query here). In ISS Orbit, change the name of the longitude and latitude column to "longitude" and "latitude".
