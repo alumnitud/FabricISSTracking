@@ -56,8 +56,8 @@ Inspired and adapted from [Anshul Sharma's blog] and [Tales from the Field's You
 * Head over to the "Designer" tab. You may now see a warning e.g. "Workflow Validation Failed!". To resolve the warning complete the steps below:
   1) Right click on "Send Event" and delete it. Then add it again using the plus icon --> "Add an Action".
   2) Search for "Send Event" (Make sure to select the "Send Event" from Event Hubs!).
-  3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New
-  4) Event Hub Name: *Insert Event Hub Name*, Advanced Param: Content, Content: HTTP Body.
+  3) For Create Connection use the following settings: Connection Name: Connection1, Authentication Type: Access Key, Connection String: *Insert connection string* --> Create New. NOTE: Make sure to include the "Endpoint=" part in the connection string as well, else you will get an error! If you had missed this, you can create a new connection with the correct connection string.
+  4) Event Hub Name: *Insert Event Hub Name* (NOTE: only include the value and NOT the "EntityPath="), Advanced Param: Content, Content: HTTP Body.
   5) Save this and head back to overview. Run it and now the runs should succeed.
 * Repeat the procedure from this section to create another workflow called "AstronautsWF".
 
